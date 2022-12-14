@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-                echo 'Hello World'
+                     https://github.com/Teja-Aws/Sample.git
                   }
             
             
