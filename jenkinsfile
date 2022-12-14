@@ -2,8 +2,8 @@
 
 stages{
     stage('checkout'){
-        https://github.com/Teja-Aws/Sample.git
+                         https://github.com/Teja-Aws/Sample.git
                      }
-     }
+      }
 
 
