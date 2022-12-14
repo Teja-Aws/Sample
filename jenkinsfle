@@ -1,0 +1,33 @@
+//bring the code from scm
+
+stages{
+    stage('checkout'){
+        git clone url
+    }
+}
+
+//pkg
+
+stage('CI'){
+
+    zip -r name-$BUILD_NUMBER.zip *
+//artifactory
+
+aws s3 cp name-$BUILD_NUMBER.zip s3://bucket
+//cd
+
+aws s3 cp s3://bucket /name-$BUILD_NUMBER.ZIP .
+
+}
+
+//extract and copy to target server
+
+unzip file .zip
+scp -r *
+stage ('validation'){
+    curl -I http://url
+}
+
+ }
+
+}
