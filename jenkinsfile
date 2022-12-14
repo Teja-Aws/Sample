@@ -1,6 +1,7 @@
 //bring the code from scm
 pipeline{
-     stages{
+      agent any{
+}     stages{
           stage('checkout'){
                          https://github.com/Teja-Aws/Sample.git
                            }
