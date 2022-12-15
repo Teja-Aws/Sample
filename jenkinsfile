@@ -8,7 +8,7 @@ pipeline {
               bat("""
               git config --global credential.username {GIT_USERNAME}
               git config --global credential.helper "!echo password={GIT_PASSWORD}; echo"
-              git clone https://github.com/aakashsehgal/FMU.git
+              git clone url  https://github.com/Teja-Aws/Sample.git /var/www/html
 
               echo "pulled the code"
               """)
