@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                git clone url https://github.com/Teja-Aws/Sample.git /var/www/html
-            }
+              echo("Hello World")
+                  }
         }
         stage('Test') { 
             steps {
