@@ -1,22 +1,27 @@
 pipeline {
     agent any 
     stages {
-        stage('Build') { 
+        stage('Git Checkout') {
             steps {
-           git branch: 'main', credentialsId: 'c32bcd78-8e80-4992-aec2-47abf50f1179', url: 'https://github.com/Teja-Aws/Sample.git'
-                  }
+                git branch: 'main', url: 'https://github.com/Teja-Aws/Sample.git'
+            }
         }
-       stage('Changing User/Group and Permission') {
+        stage('Changing User/Group and Permission') {
             steps {
-               
+                sh 'whoami'
                 sh 'chmod -R 777 /var/lib/jenkins/workspace/App'
                 sh 'chown -R jenkins:jenkins /var/www/html/'
             }
         }
-        stage('Deploy') { 
+        stage('Move code to the respective deployment location') {
             steps {
                 sh 'cp -R * /var/www/html/'
             }
+        }
+    }
+    post { 
+        always { 
+            echo 'I will always say Hello again!'
         }
     }
 }
