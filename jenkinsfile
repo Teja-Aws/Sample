@@ -10,7 +10,7 @@ pipeline {
             steps {
                 sh 'whoami'
                 sh 'chmod -R 777 /var/lib/jenkins/workspace/App'
-                sh 'chown -R jenkins:jenkins /var/www/html/'
+             
             }
         }
         stage('Move code to the respective deployment location') {
