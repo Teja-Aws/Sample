@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-           git branch: 'man', credentialsId: 'c32bcd78-8e80-4992-aec2-47abf50f1179', url: 'https://github.com/Teja-Aws/Sample.git'
+           git branch: 'main', credentialsId: 'c32bcd78-8e80-4992-aec2-47abf50f1179', url: 'https://github.com/Teja-Aws/Sample.git'
                   }
         }
        stage('Changing User/Group and Permission') {
