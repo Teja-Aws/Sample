@@ -8,9 +8,9 @@ pipeline {
         }
        stage('Changing User/Group and Permission') {
             steps {
-             
-                sh 'chmod -R 777 /var/lib/jenkins/workspace/APP'
-             
+                sh 'whoami'
+                sh 'chmod -R 777 /var/lib/jenkins/workspace/application-1'
+                sh 'chown -R jenkins:jenkins /var/www/html/'
             }
         }
         stage('Deploy') { 
