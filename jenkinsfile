@@ -1,24 +1,20 @@
 pipeline {
-   agent any
-   stages {
-      stage('clone repo') {
-          steps {
-              withCredentials(usernamePassword(credentialsId :jenkins-user-github ,passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME' )){
-              // Get some code from a GitHub repository
-              bat("""
-              git config --global credential.username {GIT_USERNAME}
-              git config --global credential.helper "!echo password={GIT_PASSWORD}; echo"
-              git clone url  https://github.com/Teja-Aws/Sample.git /var/www/html
-
-              echo "pulled the code"
-              """)
-
-          }
-
-
-         }
-
-         }
-      }
-
+    agent any 
+    stages {
+        stage('Build') { 
+            steps {
+              echo("Hello World")
+                  }
+        }
+        stage('Test') { 
+            steps {
+                echo("Hello World")
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                echo ("hello world")
+            }
+        }
+    }
 }
