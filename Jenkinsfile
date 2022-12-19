@@ -17,6 +17,7 @@ pipeline {
         stage('Deploy') { 
             steps {
                 sh 'sudo cp -R * /var/www/html/'
+                emailext body: 'successfully integrated', subject: 'job', to: 'tejathotadevop2@gmail.com'
                   }
                          }
         
