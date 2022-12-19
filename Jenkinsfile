@@ -11,9 +11,9 @@ pipeline {
                 sh 'whoami'
                 sh 'chmod -R 777 /var/lib/jenkins/workspace/sample-pipe'
                 sh 'chown -R jenkins:jenkins /var/www/html/'
-            }
+                  }
         
-        
+                             } 
         stage('Deploy') { 
             steps {
                 sh 'sudo cp -R * /var/www/html/'
