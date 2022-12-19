@@ -9,7 +9,7 @@ pipeline {
         
         stage('Deploy') { 
             steps {
-                sh 'cp -R * /var/www/html/'
+                sh 'sudo cp -R * /var/www/html/'
                   }
                          }
         
