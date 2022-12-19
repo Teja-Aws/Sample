@@ -6,18 +6,15 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/Teja-Aws/Sample.git'
                   }
                               }
-        stage('Changing User/Group and Permission') {
+        stage('Email notification') {
             steps {
-                sh 'whoami'
-                sh 'chmod -R 777 /var/lib/jenkins/workspace/sample-pipe'
-                sh 'chown -R jenkins:jenkins /var/www/html/'
+          emailext body: 'successfully triggred', subject: 'job', to: 'tejathotadevops2@gmail.com'
                   }
         
                              } 
         stage('Deploy') { 
             steps {
                 sh 'sudo cp -R * /var/www/html/'
-                emailext body: 'successfully integrated', subject: 'job', to: 'tejathotadevop2@gmail.com'
                   }
                          }
         
